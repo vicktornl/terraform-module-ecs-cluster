@@ -27,5 +27,5 @@ data "aws_ssm_parameter" "ecs_ami" {
 }
 
 locals {
-  image_id = data.aws_ssm_parameter.ecs_ami
+  image_id = data.aws_ssm_parameter.ecs_ami.value
 }

@@ -5,6 +5,7 @@ module "mycluster" {
   source   = "git@github.com:vicktornl/terraform-module-ecs-cluster.git"
   name     = "mycluster"
   max_size = 3
+  vpc_id   = module.myvpc.id
   subnets  = module.myvpc.private_subnet_ids
 }
 ```

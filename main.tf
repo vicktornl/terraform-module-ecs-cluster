@@ -4,9 +4,9 @@ resource "aws_ecs_cluster" "main" {
 
 resource "aws_launch_configuration" "main" {
   name_prefix          = var.name
-  image_id             = local.ami_id
+  image_id             = local.image_id
   instance_type        = var.instance_type
-  iam_instance_profile = aws_iam_instance_profile.ecs_container_role.id
+  iam_instance_profile = aws_iam_instance_profile.ecs_cluster_role.id
   security_groups      = var.security_groups
 
   user_data = <<EOF

@@ -2,6 +2,8 @@ variable "name" {}
 
 variable "vpc_id" {}
 
+variable "image_id" {}
+
 variable "instance_type" {
   default = "t2.micro"
 }
@@ -20,12 +22,4 @@ variable "security_groups" {
 
 variable "subnets" {
   default = []
-}
-
-data "aws_ssm_parameter" "ecs_ami" {
-  name = "/aws/service/ecs/optimized-ami/amazon-linux/recommended/image_id"
-}
-
-locals {
-  image_id = data.aws_ssm_parameter.ecs_ami.value
 }

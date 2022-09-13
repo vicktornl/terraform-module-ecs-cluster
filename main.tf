@@ -11,7 +11,7 @@ resource "aws_launch_configuration" "main" {
 
   user_data = <<EOF
 #!/bin/bash
-echo ECS_CLUSTER='${aws_ecs_cluster.main.name}' >> /etc/ecs/ecs.config;echo ECS_BACKEND_HOST= >> /etc/ecs/ecs.config;
+echo ECS_CLUSTER='${aws_ecs_cluster.main.name}' >> /etc/ecs/ecs.config
 EOF
 
   lifecycle {
